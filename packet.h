@@ -1,3 +1,6 @@
+#ifndef PACKET_H
+#define PACKET_H
+
 #include <stdint.h>
 
 #define MSS 1024        // Maximum Segment Size
@@ -18,3 +21,5 @@ typedef struct {
     char data[MSS];  // payload
 } Packet;
 #pragma pack(pop)
+
+#endif /* PACKET_H */
