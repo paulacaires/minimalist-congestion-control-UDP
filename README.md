@@ -108,6 +108,23 @@ socket existe, mas não tem endereço
 DEPOIS do bind:
 socket está “escutando” em 0.0.0.0:8080
 
+Em relação ao endereço do cliente (client_addr), quem define é o sistema e não eu. Eu saberei o endereço do cliente depois da função 
 
+`recvfrom(sockfd, ..., (struct sockaddr *)&client_addr, &client_len);`
 
+"The recvfrom() function is a standard system call used to receive data from a socket. It is primary for connectionless protocols (like UDP) because it captures the sender's address along with the received data."
 
+```
+#include <sys/socket.h>
+
+ssize_t recvfrom(int socket, void *restrict buffer, size_t length,
+                 int flags, struct sockaddr *restrict address,
+                 socklen_t *restrict address_len);
+```
+receive a message from a socket
+
+`ssize_t` é um tipo de dados inteiro com um significado: tamanho ou erro.
+- Por isso, se o retorno da função recfrom for maior que zero, então significa o número de bytes que foram recebidos. Caso for um valor negativo (-1 etc) então significa que houve um erro. 
+
+`socklen_t client_len = sizeof(client_addr);`
+socklen_t é um tipo de dado para armazenar o tamanho de estruturas de endereço (typedef para portabilidade entre sistemas, em vez de ser um "int" truncado por exemplo).
