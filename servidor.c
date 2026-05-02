@@ -12,18 +12,10 @@
 #define PORT             8080
 #define LOSS_PROBABILITY 10   // % de chance de simular perda de pacote
 
-// ─────────────────────────────────────────────────────────────
-// Simula perda de pacote aleatoriamente
-// Retorna 1 se o pacote deve ser descartado, 0 se deve ser processado
-// ─────────────────────────────────────────────────────────────
 int simular_perda() {
     return (rand() % 100) < LOSS_PROBABILITY;
 }
 
-// ─────────────────────────────────────────────────────────────
-// Envia um ACK para o cliente
-// ack_num = próximo número de sequência esperado
-// ─────────────────────────────────────────────────────────────
 void enviar_ack(int socket_fd, struct sockaddr_in *client_addr, socklen_t client_len,
                 uint16_t num_seq, uint16_t ack_num) {
     Packet ack;
@@ -42,16 +34,12 @@ void enviar_ack(int socket_fd, struct sockaddr_in *client_addr, socklen_t client
     printf("[SERVER] ACK enviado -> ack_num=%u\n", ack_num);
 }
 
-// ─────────────────────────────────────────────────────────────
-// Three-way handshake (lado servidor):
-//
-//   Cliente            Servidor
-//     |---SYN(seq=X)-->|    recebe SYN
-//     |<--SYN+ACK------|    envia SYN(seq=Y) + ACK(ack=X+1)
-//     |---ACK(ack=Y+1)>|    recebe confirmação
-//
-// Retorna o próximo num_seq esperado nos dados, ou -1 em erro
-// ─────────────────────────────────────────────────────────────
+/*
+        Cliente            Servidor
+     |---SYN(seq=X)-->|    recebe SYN
+     |<--SYN+ACK------|    envia SYN(seq=Y) + ACK(ack=X+1)
+     |---ACK(ack=Y+1)>|    recebe confirmação
+*/
 int fazer_handshake(int socket_fd, struct sockaddr_in *client_addr, socklen_t *client_len) {
     Packet packet;
     memset(&packet, 0, sizeof(Packet));
@@ -62,33 +50,26 @@ int fazer_handshake(int socket_fd, struct sockaddr_in *client_addr, socklen_t *c
     ssize_t bytes_recebidos = recvfrom(socket_fd, &packet, sizeof(Packet), 0,
                                        (struct sockaddr *)client_addr, client_len);
 
-    if (bytes_recebidos < HEADER_SIZE) {
-        printf("[SERVER] Pacote muito pequeno, ignorando\n");
-        return -1;
-    }
-
-    // BUG CORRIGIDO: packet e struct (nao ponteiro), usa . e nao ->
     if (!(packet.flags & FLAG_SYN)) {
         printf("[SERVER] Esperava SYN, recebi outra coisa\n");
         return -1;
     }
 
-    // BUG CORRIGIDO: converte os campos recebidos da rede para o formato do host
     header_human_friendly(&packet);
     uint16_t nseq_cliente = packet.num_seq;
     printf("[SERVER] SYN recebido -> num_seq=%u\n", nseq_cliente);
 
     // PASSO 2: Envia SYN+ACK
+    // +1 para garantir que não vai ser zero
     uint16_t nseq_server = (uint16_t)(rand() % 1000 + 1);
 
     Packet server_syn_ack;
-    // BUG CORRIGIDO: sempre zerar a struct antes de usar
     memset(&server_syn_ack, 0, sizeof(Packet));
 
     server_syn_ack.num_seq = nseq_server;
-    // BUG CORRIGIDO: num_ack deve ser nseq_cliente + 1 (proximo byte esperado)
+    // num_ack deve ser nseq_cliente + 1 (proximo byte esperado)
     server_syn_ack.num_ack = nseq_cliente + 1;
-    server_syn_ack.flags   = FLAG_SYN | FLAG_ACK;
+    server_syn_ack.flags   = FLAG_SYN | FLAG_ACK; // liga as duas flags
 
     header_network_friendly(&server_syn_ack);
 
@@ -114,10 +95,8 @@ int fazer_handshake(int socket_fd, struct sockaddr_in *client_addr, socklen_t *c
     return nseq_cliente + 1;
 }
 
-// ─────────────────────────────────────────────────────────────
-// main
-// ─────────────────────────────────────────────────────────────
 int main(void) {
+    // Para não perder sempre os mesmos pacotes
     srand((unsigned)time(NULL));
 
     // 1. Criar socket UDP
@@ -128,7 +107,7 @@ int main(void) {
         exit(EXIT_FAILURE);
     }
 
-    int opt = 1;
+    int opt = 1; // Enable (Habilitar) a option
     setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
 
     struct sockaddr_in server_addr;
@@ -149,7 +128,7 @@ int main(void) {
     struct sockaddr_in client_addr;
     socklen_t client_len = sizeof(client_addr);
 
-    // BUG CORRIGIDO: passa &client_addr e &client_len (ponteiros)
+    // passa &client_addr e &client_len (ponteiros)
     int proximo_seq_esperado = fazer_handshake(socket_fd, &client_addr, &client_len);
 
     if (proximo_seq_esperado < 0) {

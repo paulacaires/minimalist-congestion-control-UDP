@@ -128,3 +128,16 @@ receive a message from a socket
 
 `socklen_t client_len = sizeof(client_addr);`
 socklen_t é um tipo de dado para armazenar o tamanho de estruturas de endereço (typedef para portabilidade entre sistemas, em vez de ser um "int" truncado por exemplo).
+
+---
+
+int opt = 1;
+setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+
+Para resolver o erro: "bind: Address already in use"
+
+# ISN_cliente e ISN_servidor
+Cada lado da conexão escolhe seu próprio número inicial, independente
+
+# inet_pton
+Converte um endereço IP em formado de texto (string) para binário, que o socket usa.

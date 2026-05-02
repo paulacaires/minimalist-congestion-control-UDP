@@ -29,12 +29,14 @@ static void header_network_friendly(Packet *p) {
     p->num_seq = htons(p->num_seq);
     p->num_ack = htons(p->num_ack);
     p->buffer_recebimento = htons(p->buffer_recebimento);
+    p->bytes_enviados = htons(p->bytes_enviados);
 }
 
 static void header_human_friendly(Packet *p) {
     p->num_seq = ntohs(p->num_seq);
     p->num_ack = ntohs(p->num_ack);
     p->buffer_recebimento = ntohs(p->buffer_recebimento);
+    p->bytes_enviados     = ntohs(p->bytes_enviados);
 }
 
 static void print_packet(Packet *p) {

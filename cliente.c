@@ -122,22 +122,20 @@ void enviar_dados(int socket_fd, struct sockaddr_in *server_addr,
 
     // Converte header para byte order da rede
     header_network_friendly(&packet);
-    // bytes_enviados também precisa ser convertido
-    packet.bytes_enviados = htons(tamanho);
 
     sendto(socket_fd, &packet, HEADER_SIZE + tamanho, 0,
            (struct sockaddr *)server_addr, sizeof(*server_addr));
 }
 
-// ─────────────────────────────────────────────────────────────
-// Three-way handshake (lado cliente):
-//
-//   1. Envia SYN com ISN escolhido pelo cliente
-//   2. Recebe SYN+ACK do servidor
-//   3. Envia ACK confirmando
-//
-// Retorna o num_seq inicial para os dados, ou -1 em erro
-// ─────────────────────────────────────────────────────────────
+/*
+Three-way handshake (lado cliente):
+
+1. Envia SYN com ISN escolhido pelo cliente
+2. Recebe SYN+ACK do servidor
+3. Envia ACK confirmando
+
+Retorna o num_seq inicial para os dados, ou -1 em erro
+*/
 int fazer_handshake(int socket_fd, struct sockaddr_in *server_addr, uint16_t *meu_isn) {
     *meu_isn = (uint16_t)(rand() % 1000 + 100);
 
@@ -191,9 +189,6 @@ int fazer_handshake(int socket_fd, struct sockaddr_in *server_addr, uint16_t *me
     return *meu_isn + 1; // primeiro num_seq dos dados
 }
 
-// ─────────────────────────────────────────────────────────────
-// main
-// ─────────────────────────────────────────────────────────────
 int main(void) {
     srand((unsigned)time(NULL));
 
@@ -253,21 +248,11 @@ int main(void) {
 
     configurar_timeout(socket_fd, RTO_MS);
 
-    // ─────────────────────────────────────────────────────────
-    // Loop principal de transmissão
-    //
-    // Estratégia: envia uma janela de pacotes, depois aguarda os ACKs.
-    // Em caso de timeout: retransmite e reinicia cwnd (Slow Start).
-    // ─────────────────────────────────────────────────────────
     while (bytes_confirmados < TOTAL_DADOS) {
-
-        // ── Fase de envio: preenche a janela ─────────────────
-        // Quantos pacotes cabem na janela atual?
         uint32_t bytes_na_janela  = 0;
         int      pacotes_enviados = 0;
 
-        // Guarda info de cada pacote enviado nesta janela
-        // para poder retransmitir em caso de timeout
+        // Guarda os pacotes para conseguir retransmitir
         uint16_t seqs[1024];
         uint16_t lens[1024];
         double   tempos_envio[1024];
