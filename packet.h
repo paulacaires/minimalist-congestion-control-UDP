@@ -6,14 +6,14 @@
 #define MSS 1024
 #define RTO_MS 500
 #define INITIAL_SSTHRESH 15360
+#define MAX_WINDOW_ARRAY 1024
 
 #pragma pack(push, 1)
 typedef struct {
-    uint16_t num_seq;            // 2 bytes
-    uint16_t num_ack;            // 2 bytes
-    uint16_t buffer_recebimento; // 2 bytes
+    uint16_t num_seq;
+    uint16_t num_ack;
+    uint16_t buffer_recebimento;
     
-    // 2 bytes (13 bits + 1 + 1 + 1)
     uint16_t bytes_enviados : 13; 
     uint16_t flag_fin       : 1;
     uint16_t flag_syn       : 1;
