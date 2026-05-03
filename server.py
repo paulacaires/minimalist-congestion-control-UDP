@@ -12,60 +12,56 @@ def run_server():
     
     print("[SERVER] Aguardando conexao na porta 8080")
     
-    # Handshake
+    # --- HANDSHAKE ---
     while True:
         data, cliaddr = sockfd.recvfrom(2048)
-        pkt = unpack_packet(data)
+        h, _ = separate_packet(data)
+        seq, ack, dlen, f_fin, f_syn, f_ack = decode_header(h)
         
-        if pkt['flag_syn']:
-            client_seq = pkt['num_seq']
+        if f_syn:
             server_isn = random.randint(0, 4999)
+            print(f"[HANDSHAKE] SYN recebido (Seq: {seq}). Enviando SYN-ACK...")
+            h_res = create_header(server_isn, seq + 1, 0, False, True, True)
+            sockfd.sendto(h_res, cliaddr)
             
-            # Envia SYN-ACK
-            sa = pack_packet(server_isn, client_seq + 1, 0, 0, 0, 1, 1)
-            sockfd.sendto(sa, cliaddr)
-            
-            # Aguarda ACK final do handshake
             data, _ = sockfd.recvfrom(2048)
-            pkt = unpack_packet(data)
-            if pkt['flag_ack'] and pkt['num_ack'] == (server_isn + 1):
-                expected_seq = client_seq + 1
+            h, _ = separate_packet(data)
+            _, a, _, _, _, f_a = decode_header(h)
+            if f_a and a == (server_isn + 1):
+                expected_seq = seq + 1
                 print("[HANDSHAKE] Conexao estabelecida")
                 break
 
-    # Loop de Dados
+    # --- LOOP DE DADOS ---
     while True:
         try:
-            data, cliaddr = sockfd.recvfrom(2048)
-            pkt = unpack_packet(data)
+            raw_packet, cliaddr = sockfd.recvfrom(2048)
+            h, payload = separate_packet(raw_packet)
+            seq, ack, dlen, f_fin, f_syn, f_ack = decode_header(h)
         except: continue
 
-        if pkt['flag_fin']:
-            print("[RECV] FIN recebido - Encerrando")
-            fa = pack_packet(0, 0, 0, 0, 1, 0, 1)
-            sockfd.sendto(fa, cliaddr)
+        if f_fin:
+            print("[RECV] FIN recebido - Encerrando servidor")
+            h_fin = create_header(0, 0, 0, True, False, True)
+            sockfd.sendto(h_fin, cliaddr)
             break
             
-        cur_seq = pkt['num_seq']
-        b_recv = pkt['bytes_enviados']
-
-        # Simulação de perda (10%)
-        if random.random() < 0.1:
-            print(f"[LOSS] Pacote Seq {cur_seq} ignorado")
+        if random.random() < 0.1: # Perda de 10%
+            print(f"[LOSS] Pacote Seq {seq} ignorado")
             packets_lost += 1
             continue
 
-        if cur_seq == expected_seq:
-            expected_seq += b_recv
-            total_bytes += b_recv
-            print(f"[DATA] Seq {cur_seq} recebido - Total: {total_bytes} bytes")
+        if seq == expected_seq:
+            expected_seq += dlen
+            total_bytes += dlen
+            print(f"[DATA] Seq {seq} recebido ({dlen} bytes) - Total: {total_bytes}")
             
-        # Envia ACK cumulativo
-        ack_p = pack_packet(0, expected_seq, 0, 0, 0, 0, 1)
-        sockfd.sendto(ack_p, cliaddr)
+        h_ack = create_header(0, expected_seq, 0, False, False, True)
+        sockfd.sendto(h_ack, cliaddr)
 
-    print(f"\nTotal Recebido: {total_bytes} bytes")
-    print(f"Perdas Simuladas: {packets_lost}")
+    print(f"\n--- ESTATISTICAS DO SERVIDOR ---")
+    print(f"Total Recebido: {total_bytes} bytes")
+    print(f"Pacotes Perdidos (Simulados): {packets_lost}")
     sockfd.close()
 
 if __name__ == "__main__":
