@@ -84,8 +84,7 @@ int main() {
     while (confirmed < total_to_send) {
         uint32_t in_flight = 0;
         int burst_size = 0; // Tamanho da rajada de envio (antes de ouvir os ACKs)
-        // Guarda seq_number e o tempo para RTT para cada pacote
-        uint16_t window_seqs[MAX_WINDOW_ARRAY];
+        // Guarda o tempo para RTT para cada pacote
         double window_times[MAX_WINDOW_ARRAY];
 
         // Envio dos pacotes (rajada) com o limite da janela de congestionamento e limite de envio
@@ -94,8 +93,7 @@ int main() {
             p.num_seq = htons(next_seq);
             p.bytes_enviados = htons(MSS);
             
-            // Para cada posição do array (cada envio), guarda o seq_number e o tempo para o RTT
-            window_seqs[burst_size] = next_seq;
+            // Para cada posição do array (cada envio), guarda o tempo para o RTT
             window_times[burst_size] = get_now();
             
             // Envia o pacote
