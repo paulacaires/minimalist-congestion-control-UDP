@@ -1,0 +1,211 @@
+sudo tc qdisc add dev lo root netem delay 100ms 20ms loss 10%
+
+[CLIENT] Iniciando Handshake (ISN: 1391)
+[CLIENT] Conectado - Iniciando transferencia
+[SEND] Seq: 1392 | Janela (CWND): 1024
+[ACK] Recebido: 2416
+[SEND] Seq: 2416 | Janela (CWND): 2048
+[SEND] Seq: 3440 | Janela (CWND): 2048
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 2416
+[SEND] Seq: 2416 | Janela (CWND): 1024
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 2416
+[SEND] Seq: 2416 | Janela (CWND): 1024
+[ACK] Recebido: 3440
+[SEND] Seq: 3440 | Janela (CWND): 2048
+[SEND] Seq: 4464 | Janela (CWND): 2048
+[ACK] Recebido: 4464
+[SEND] Seq: 5488 | Janela (CWND): 2560
+[SEND] Seq: 6512 | Janela (CWND): 2560
+[SEND] Seq: 7536 | Janela (CWND): 2560
+[SEND] Seq: 8560 | Janela (CWND): 2560
+[SEND] Seq: 9584 | Janela (CWND): 2560
+[SEND] Seq: 10608 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 4464
+[SEND] Seq: 4464 | Janela (CWND): 1024
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 4464
+[SEND] Seq: 4464 | Janela (CWND): 1024
+[ACK] Recebido: 5488
+[SEND] Seq: 5488 | Janela (CWND): 2048
+[SEND] Seq: 6512 | Janela (CWND): 2048
+[ACK] Recebido: 6512
+[SEND] Seq: 7536 | Janela (CWND): 2560
+[SEND] Seq: 8560 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 6512
+[SEND] Seq: 6512 | Janela (CWND): 1024
+[ACK] Recebido: 7536
+[SEND] Seq: 7536 | Janela (CWND): 2048
+[SEND] Seq: 8560 | Janela (CWND): 2048
+[ACK] Recebido: 8560
+[ACK] Recebido: 9584
+[SEND] Seq: 9584 | Janela (CWND): 2970
+[SEND] Seq: 10608 | Janela (CWND): 2970
+[ACK] Recebido: 10608
+[SEND] Seq: 11632 | Janela (CWND): 3323
+[SEND] Seq: 12656 | Janela (CWND): 3323
+[SEND] Seq: 13680 | Janela (CWND): 3323
+[SEND] Seq: 14704 | Janela (CWND): 3323
+[SEND] Seq: 15728 | Janela (CWND): 3323
+[SEND] Seq: 16752 | Janela (CWND): 3323
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 10608
+[SEND] Seq: 10608 | Janela (CWND): 1024
+[ACK] Recebido: 11632
+[SEND] Seq: 11632 | Janela (CWND): 2048
+[SEND] Seq: 12656 | Janela (CWND): 2048
+[ACK] Recebido: 12656
+[SEND] Seq: 13680 | Janela (CWND): 2560
+[SEND] Seq: 14704 | Janela (CWND): 2560
+[SEND] Seq: 15728 | Janela (CWND): 2560
+[SEND] Seq: 16752 | Janela (CWND): 2560
+[SEND] Seq: 17776 | Janela (CWND): 2560
+[SEND] Seq: 18800 | Janela (CWND): 2560
+[SEND] Seq: 19824 | Janela (CWND): 2560
+[SEND] Seq: 20848 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 12656
+[SEND] Seq: 12656 | Janela (CWND): 1024
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 12656
+[SEND] Seq: 12656 | Janela (CWND): 1024
+[ACK] Recebido: 13680
+[SEND] Seq: 13680 | Janela (CWND): 2048
+[SEND] Seq: 14704 | Janela (CWND): 2048
+[ACK] Recebido: 14704
+[SEND] Seq: 15728 | Janela (CWND): 2560
+[SEND] Seq: 16752 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 14704
+[SEND] Seq: 14704 | Janela (CWND): 1024
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 14704
+[SEND] Seq: 14704 | Janela (CWND): 1024
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 14704
+[SEND] Seq: 14704 | Janela (CWND): 1024
+[ACK] Recebido: 15728
+[SEND] Seq: 15728 | Janela (CWND): 2048
+[SEND] Seq: 16752 | Janela (CWND): 2048
+[ACK] Recebido: 17776
+[SEND] Seq: 17776 | Janela (CWND): 2560
+[SEND] Seq: 18800 | Janela (CWND): 2560
+[ACK] Recebido: 18800
+[ACK] Recebido: 19824
+[SEND] Seq: 19824 | Janela (CWND): 3323
+[SEND] Seq: 20848 | Janela (CWND): 3323
+[SEND] Seq: 21872 | Janela (CWND): 3323
+[ACK] Recebido: 21872
+[ACK] Recebido: 22896
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 22896
+[SEND] Seq: 22896 | Janela (CWND): 1024
+[ACK] Recebido: 23920
+[SEND] Seq: 23920 | Janela (CWND): 2048
+[SEND] Seq: 24944 | Janela (CWND): 2048
+[ACK] Recebido: 24944
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 24944
+[SEND] Seq: 24944 | Janela (CWND): 1024
+[ACK] Recebido: 25968
+[SEND] Seq: 25968 | Janela (CWND): 2048
+[SEND] Seq: 26992 | Janela (CWND): 2048
+[ACK] Recebido: 26992
+[SEND] Seq: 28016 | Janela (CWND): 2560
+[SEND] Seq: 29040 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 26992
+[SEND] Seq: 26992 | Janela (CWND): 1024
+[ACK] Recebido: 28016
+[SEND] Seq: 28016 | Janela (CWND): 2048
+[SEND] Seq: 29040 | Janela (CWND): 2048
+[ACK] Recebido: 29040
+[SEND] Seq: 30064 | Janela (CWND): 2560
+[SEND] Seq: 31088 | Janela (CWND): 2560
+[SEND] Seq: 32112 | Janela (CWND): 2560
+[SEND] Seq: 33136 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 29040
+[SEND] Seq: 29040 | Janela (CWND): 1024
+[ACK] Recebido: 30064
+[SEND] Seq: 30064 | Janela (CWND): 2048
+[SEND] Seq: 31088 | Janela (CWND): 2048
+[ACK] Recebido: 31088
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 31088
+[SEND] Seq: 31088 | Janela (CWND): 1024
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 31088
+[SEND] Seq: 31088 | Janela (CWND): 1024
+[ACK] Recebido: 32112
+[SEND] Seq: 32112 | Janela (CWND): 2048
+[SEND] Seq: 33136 | Janela (CWND): 2048
+[ACK] Recebido: 33136
+[ACK] Recebido: 34160
+[SEND] Seq: 34160 | Janela (CWND): 2970
+[SEND] Seq: 35184 | Janela (CWND): 2970
+[ACK] Recebido: 35184
+[SEND] Seq: 36208 | Janela (CWND): 3323
+[SEND] Seq: 37232 | Janela (CWND): 3323
+[SEND] Seq: 38256 | Janela (CWND): 3323
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 35184
+[SEND] Seq: 35184 | Janela (CWND): 1024
+[ACK] Recebido: 36208
+[SEND] Seq: 36208 | Janela (CWND): 2048
+[SEND] Seq: 37232 | Janela (CWND): 2048
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 36208
+[SEND] Seq: 36208 | Janela (CWND): 1024
+[ACK] Recebido: 37232
+[SEND] Seq: 37232 | Janela (CWND): 2048
+[SEND] Seq: 38256 | Janela (CWND): 2048
+[ACK] Recebido: 38256
+[SEND] Seq: 39280 | Janela (CWND): 2560
+[SEND] Seq: 40304 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 38256
+[SEND] Seq: 38256 | Janela (CWND): 1024
+[ACK] Recebido: 39280
+[SEND] Seq: 39280 | Janela (CWND): 2048
+[SEND] Seq: 40304 | Janela (CWND): 2048
+[ACK] Recebido: 40304
+[ACK] Recebido: 41328
+[SEND] Seq: 41328 | Janela (CWND): 2970
+[SEND] Seq: 42352 | Janela (CWND): 2970
+[ACK] Recebido: 42352
+[SEND] Seq: 43376 | Janela (CWND): 3323
+[SEND] Seq: 44400 | Janela (CWND): 3323
+[SEND] Seq: 45424 | Janela (CWND): 3323
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 42352
+[SEND] Seq: 42352 | Janela (CWND): 1024
+[ACK] Recebido: 43376
+[SEND] Seq: 43376 | Janela (CWND): 2048
+[SEND] Seq: 44400 | Janela (CWND): 2048
+[ACK] Recebido: 44400
+[SEND] Seq: 45424 | Janela (CWND): 2560
+[SEND] Seq: 46448 | Janela (CWND): 2560
+[SEND] Seq: 47472 | Janela (CWND): 2560
+[SEND] Seq: 48496 | Janela (CWND): 2560
+[SEND] Seq: 49520 | Janela (CWND): 2560
+[SEND] Seq: 50544 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 44400
+[SEND] Seq: 44400 | Janela (CWND): 1024
+[ACK] Recebido: 45424
+[SEND] Seq: 45424 | Janela (CWND): 2048
+[SEND] Seq: 46448 | Janela (CWND): 2048
+[ACK] Recebido: 46448
+[SEND] Seq: 47472 | Janela (CWND): 2560
+[SEND] Seq: 48496 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 46448
+[SEND] Seq: 46448 | Janela (CWND): 1024
+[ACK] Recebido: 47472
+[SEND] Seq: 47472 | Janela (CWND): 2048
+[SEND] Seq: 48496 | Janela (CWND): 2048
+[ACK] Recebido: 48496
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 48496
+[SEND] Seq: 48496 | Janela (CWND): 1024
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 48496
+[SEND] Seq: 48496 | Janela (CWND): 1024
+[ACK] Recebido: 49520
+[SEND] Seq: 49520 | Janela (CWND): 2048
+[SEND] Seq: 50544 | Janela (CWND): 2048
+[ACK] Recebido: 50544
+[SEND] Seq: 51568 | Janela (CWND): 2560
+[SEND] Seq: 52592 | Janela (CWND): 2560
+[SEND] Seq: 53616 | Janela (CWND): 2560
+[SEND] Seq: 54640 | Janela (CWND): 2560
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 50544
+[SEND] Seq: 50544 | Janela (CWND): 1024
+[ACK] Recebido: 51568
+[SEND] Seq: 51568 | Janela (CWND): 2048
+[ACK] Recebido: 52592
+
+Total Enviado: 51200 bytes
+Retransmissoes: 26
+RTT Medio: 228.78 ms
+
+sudo tc qdisc del dev lo root

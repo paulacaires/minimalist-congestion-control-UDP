@@ -1,0 +1,124 @@
+sudo tc qdisc add dev lo root netem delay 100ms 20ms loss 10%
+
+[SERVER] Aguardando conexao na porta 8080
+[HANDSHAKE] Conexao estabelecida
+[DATA] Seq 1392 recebido - Total: 1024 bytes
+[OUT-OF-ORDER] Esperado: 2416 | Recebido: 3440
+[DATA] Seq 2416 recebido - Total: 2048 bytes
+[OUT-OF-ORDER] Esperado: 3440 | Recebido: 4464
+[DATA] Seq 3440 recebido - Total: 3072 bytes
+[OUT-OF-ORDER] Esperado: 4464 | Recebido: 5488
+[OUT-OF-ORDER] Esperado: 4464 | Recebido: 6512
+[OUT-OF-ORDER] Esperado: 4464 | Recebido: 7536
+[OUT-OF-ORDER] Esperado: 4464 | Recebido: 8560
+[OUT-OF-ORDER] Esperado: 4464 | Recebido: 10608
+[DATA] Seq 4464 recebido - Total: 4096 bytes
+[OUT-OF-ORDER] Esperado: 5488 | Recebido: 6512
+[DATA] Seq 5488 recebido - Total: 5120 bytes
+[OUT-OF-ORDER] Esperado: 6512 | Recebido: 8560
+[LOSS] Pacote Seq 7536 ignorado
+[DATA] Seq 6512 recebido - Total: 6144 bytes
+[DATA] Seq 7536 recebido - Total: 7168 bytes
+[DATA] Seq 8560 recebido - Total: 8192 bytes
+[OUT-OF-ORDER] Esperado: 9584 | Recebido: 10608
+[DATA] Seq 9584 recebido - Total: 9216 bytes
+[OUT-OF-ORDER] Esperado: 10608 | Recebido: 13680
+[OUT-OF-ORDER] Esperado: 10608 | Recebido: 11632
+[OUT-OF-ORDER] Esperado: 10608 | Recebido: 12656
+[OUT-OF-ORDER] Esperado: 10608 | Recebido: 15728
+[LOSS] Pacote Seq 14704 ignorado
+[DATA] Seq 10608 recebido - Total: 10240 bytes
+[OUT-OF-ORDER] Esperado: 11632 | Recebido: 12656
+[DATA] Seq 11632 recebido - Total: 11264 bytes
+[OUT-OF-ORDER] Esperado: 12656 | Recebido: 14704
+[OUT-OF-ORDER] Esperado: 12656 | Recebido: 13680
+[OUT-OF-ORDER] Esperado: 12656 | Recebido: 15728
+[OUT-OF-ORDER] Esperado: 12656 | Recebido: 16752
+[OUT-OF-ORDER] Esperado: 12656 | Recebido: 17776
+[OUT-OF-ORDER] Esperado: 12656 | Recebido: 18800
+[OUT-OF-ORDER] Esperado: 12656 | Recebido: 19824
+[DATA] Seq 12656 recebido - Total: 12288 bytes
+[OUT-OF-ORDER] Esperado: 13680 | Recebido: 12656
+[OUT-OF-ORDER] Esperado: 13680 | Recebido: 14704
+[DATA] Seq 13680 recebido - Total: 13312 bytes
+[OUT-OF-ORDER] Esperado: 14704 | Recebido: 16752
+[OUT-OF-ORDER] Esperado: 14704 | Recebido: 15728
+[DATA] Seq 14704 recebido - Total: 14336 bytes
+[OUT-OF-ORDER] Esperado: 15728 | Recebido: 14704
+[DATA] Seq 15728 recebido - Total: 15360 bytes
+[DATA] Seq 16752 recebido - Total: 16384 bytes
+[DATA] Seq 17776 recebido - Total: 17408 bytes
+[DATA] Seq 18800 recebido - Total: 18432 bytes
+[DATA] Seq 19824 recebido - Total: 19456 bytes
+[DATA] Seq 20848 recebido - Total: 20480 bytes
+[DATA] Seq 21872 recebido - Total: 21504 bytes
+[DATA] Seq 22896 recebido - Total: 22528 bytes
+[LOSS] Pacote Seq 24944 ignorado
+[DATA] Seq 23920 recebido - Total: 23552 bytes
+[DATA] Seq 24944 recebido - Total: 24576 bytes
+[OUT-OF-ORDER] Esperado: 25968 | Recebido: 26992
+[DATA] Seq 25968 recebido - Total: 25600 bytes
+[LOSS] Pacote Seq 29040 ignorado
+[OUT-OF-ORDER] Esperado: 26992 | Recebido: 28016
+[DATA] Seq 26992 recebido - Total: 26624 bytes
+[OUT-OF-ORDER] Esperado: 28016 | Recebido: 29040
+[DATA] Seq 28016 recebido - Total: 27648 bytes
+[OUT-OF-ORDER] Esperado: 29040 | Recebido: 30064
+[OUT-OF-ORDER] Esperado: 29040 | Recebido: 31088
+[LOSS] Pacote Seq 33136 ignorado
+[OUT-OF-ORDER] Esperado: 29040 | Recebido: 32112
+[DATA] Seq 29040 recebido - Total: 28672 bytes
+[DATA] Seq 30064 recebido - Total: 29696 bytes
+[LOSS] Pacote Seq 31088 ignorado
+[DATA] Seq 31088 recebido - Total: 30720 bytes
+[DATA] Seq 32112 recebido - Total: 31744 bytes
+[DATA] Seq 33136 recebido - Total: 32768 bytes
+[OUT-OF-ORDER] Esperado: 34160 | Recebido: 35184
+[DATA] Seq 34160 recebido - Total: 33792 bytes
+[OUT-OF-ORDER] Esperado: 35184 | Recebido: 37232
+[OUT-OF-ORDER] Esperado: 35184 | Recebido: 36208
+[LOSS] Pacote Seq 38256 ignorado
+[DATA] Seq 35184 recebido - Total: 34816 bytes
+[LOSS] Pacote Seq 37232 ignorado
+[DATA] Seq 36208 recebido - Total: 35840 bytes
+[OUT-OF-ORDER] Esperado: 37232 | Recebido: 38256
+[DATA] Seq 37232 recebido - Total: 36864 bytes
+[OUT-OF-ORDER] Esperado: 38256 | Recebido: 39280
+[LOSS] Pacote Seq 40304 ignorado
+[DATA] Seq 38256 recebido - Total: 37888 bytes
+[DATA] Seq 39280 recebido - Total: 38912 bytes
+[DATA] Seq 40304 recebido - Total: 39936 bytes
+[OUT-OF-ORDER] Esperado: 41328 | Recebido: 42352
+[DATA] Seq 41328 recebido - Total: 40960 bytes
+[OUT-OF-ORDER] Esperado: 42352 | Recebido: 44400
+[OUT-OF-ORDER] Esperado: 42352 | Recebido: 43376
+[DATA] Seq 42352 recebido - Total: 41984 bytes
+[OUT-OF-ORDER] Esperado: 43376 | Recebido: 44400
+[DATA] Seq 43376 recebido - Total: 43008 bytes
+[OUT-OF-ORDER] Esperado: 44400 | Recebido: 46448
+[OUT-OF-ORDER] Esperado: 44400 | Recebido: 45424
+[OUT-OF-ORDER] Esperado: 44400 | Recebido: 47472
+[OUT-OF-ORDER] Esperado: 44400 | Recebido: 48496
+[OUT-OF-ORDER] Esperado: 44400 | Recebido: 50544
+[OUT-OF-ORDER] Esperado: 44400 | Recebido: 49520
+[DATA] Seq 44400 recebido - Total: 44032 bytes
+[OUT-OF-ORDER] Esperado: 45424 | Recebido: 46448
+[DATA] Seq 45424 recebido - Total: 45056 bytes
+[OUT-OF-ORDER] Esperado: 46448 | Recebido: 48496
+[DATA] Seq 46448 recebido - Total: 46080 bytes
+[DATA] Seq 47472 recebido - Total: 47104 bytes
+[DATA] Seq 48496 recebido - Total: 48128 bytes
+[OUT-OF-ORDER] Esperado: 49520 | Recebido: 50544
+[DATA] Seq 49520 recebido - Total: 49152 bytes
+[OUT-OF-ORDER] Esperado: 50544 | Recebido: 52592
+[OUT-OF-ORDER] Esperado: 50544 | Recebido: 51568
+[LOSS] Pacote Seq 53616 ignorado
+[OUT-OF-ORDER] Esperado: 50544 | Recebido: 54640
+[DATA] Seq 50544 recebido - Total: 50176 bytes
+[DATA] Seq 51568 recebido - Total: 51200 bytes
+[RECV] FIN recebido - Encerrando
+
+Total Recebido: 51200 bytes
+Perdas Simuladas: 10
+
+sudo tc qdisc del dev lo root

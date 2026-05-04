@@ -1,0 +1,133 @@
+[CLIENT] Iniciando Handshake (ISN: 2372)
+[CLIENT] Conectado - Iniciando transferencia
+[SEND] Seq: 2373 | Janela (CWND): 1024
+[ACK] Recebido: 3397
+[SEND] Seq: 3397 | Janela (CWND): 2048
+[SEND] Seq: 4421 | Janela (CWND): 2048
+[ACK] Recebido: 4421
+[ACK] Recebido: 5445
+[SEND] Seq: 5445 | Janela (CWND): 4096
+[SEND] Seq: 6469 | Janela (CWND): 4096
+[SEND] Seq: 7493 | Janela (CWND): 4096
+[SEND] Seq: 8517 | Janela (CWND): 4096
+[ACK] Recebido: 6469
+[ACK] Recebido: 7493
+[ACK] Recebido: 8517
+[ACK] Recebido: 9541
+[SEND] Seq: 9541 | Janela (CWND): 8192
+[SEND] Seq: 10565 | Janela (CWND): 8192
+[SEND] Seq: 11589 | Janela (CWND): 8192
+[SEND] Seq: 12613 | Janela (CWND): 8192
+[SEND] Seq: 13637 | Janela (CWND): 8192
+[SEND] Seq: 14661 | Janela (CWND): 8192
+[SEND] Seq: 15685 | Janela (CWND): 8192
+[SEND] Seq: 16709 | Janela (CWND): 8192
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 9541
+[SEND] Seq: 9541 | Janela (CWND): 1024
+[ACK] Recebido: 10565
+[SEND] Seq: 10565 | Janela (CWND): 2048
+[SEND] Seq: 11589 | Janela (CWND): 2048
+[ACK] Recebido: 11589
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 11589
+[SEND] Seq: 11589 | Janela (CWND): 1024
+[ACK] Recebido: 12613
+[SEND] Seq: 12613 | Janela (CWND): 2048
+[SEND] Seq: 13637 | Janela (CWND): 2048
+[ACK] Recebido: 13637
+[ACK] Recebido: 14661
+[SEND] Seq: 14661 | Janela (CWND): 2970
+[SEND] Seq: 15685 | Janela (CWND): 2970
+[ACK] Recebido: 15685
+[ACK] Recebido: 16709
+[SEND] Seq: 16709 | Janela (CWND): 3638
+[SEND] Seq: 17733 | Janela (CWND): 3638
+[SEND] Seq: 18757 | Janela (CWND): 3638
+[ACK] Recebido: 17733
+[ACK] Recebido: 18757
+[ACK] Recebido: 19781
+[SEND] Seq: 19781 | Janela (CWND): 4444
+[SEND] Seq: 20805 | Janela (CWND): 4444
+[SEND] Seq: 21829 | Janela (CWND): 4444
+[SEND] Seq: 22853 | Janela (CWND): 4444
+[ACK] Recebido: 20805
+[ACK] Recebido: 21829
+[ACK] Recebido: 22853
+[ACK] Recebido: 23877
+[SEND] Seq: 23877 | Janela (CWND): 5322
+[SEND] Seq: 24901 | Janela (CWND): 5322
+[SEND] Seq: 25925 | Janela (CWND): 5322
+[SEND] Seq: 26949 | Janela (CWND): 5322
+[SEND] Seq: 27973 | Janela (CWND): 5322
+[ACK] Recebido: 24901
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 24901
+[SEND] Seq: 24901 | Janela (CWND): 1024
+[ACK] Recebido: 25925
+[SEND] Seq: 25925 | Janela (CWND): 2048
+[SEND] Seq: 26949 | Janela (CWND): 2048
+[ACK] Recebido: 26949
+[ACK] Recebido: 27973
+[SEND] Seq: 27973 | Janela (CWND): 3413
+[SEND] Seq: 28997 | Janela (CWND): 3413
+[SEND] Seq: 30021 | Janela (CWND): 3413
+[ACK] Recebido: 28997
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 28997
+[SEND] Seq: 28997 | Janela (CWND): 1024
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 28997
+[SEND] Seq: 28997 | Janela (CWND): 1024
+[ACK] Recebido: 30021
+[SEND] Seq: 30021 | Janela (CWND): 2048
+[SEND] Seq: 31045 | Janela (CWND): 2048
+[ACK] Recebido: 31045
+[ACK] Recebido: 32069
+[SEND] Seq: 32069 | Janela (CWND): 2970
+[SEND] Seq: 33093 | Janela (CWND): 2970
+[ACK] Recebido: 33093
+[ACK] Recebido: 34117
+[SEND] Seq: 34117 | Janela (CWND): 3638
+[SEND] Seq: 35141 | Janela (CWND): 3638
+[SEND] Seq: 36165 | Janela (CWND): 3638
+[ACK] Recebido: 35141
+[ACK] Recebido: 36165
+[ACK] Recebido: 37189
+[SEND] Seq: 37189 | Janela (CWND): 4444
+[SEND] Seq: 38213 | Janela (CWND): 4444
+[SEND] Seq: 39237 | Janela (CWND): 4444
+[SEND] Seq: 40261 | Janela (CWND): 4444
+[ACK] Recebido: 38213
+[ACK] Recebido: 39237
+[ACK] Recebido: 40261
+[ACK] Recebido: 41285
+[SEND] Seq: 41285 | Janela (CWND): 5322
+[SEND] Seq: 42309 | Janela (CWND): 5322
+[SEND] Seq: 43333 | Janela (CWND): 5322
+[SEND] Seq: 44357 | Janela (CWND): 5322
+[SEND] Seq: 45381 | Janela (CWND): 5322
+[TIMEOUT] Perda detectada - Retransmitindo a partir de Seq: 41285
+[SEND] Seq: 41285 | Janela (CWND): 1024
+[ACK] Recebido: 42309
+[SEND] Seq: 42309 | Janela (CWND): 2048
+[SEND] Seq: 43333 | Janela (CWND): 2048
+[ACK] Recebido: 43333
+[ACK] Recebido: 44357
+[SEND] Seq: 44357 | Janela (CWND): 3413
+[SEND] Seq: 45381 | Janela (CWND): 3413
+[SEND] Seq: 46405 | Janela (CWND): 3413
+[ACK] Recebido: 45381
+[ACK] Recebido: 46405
+[ACK] Recebido: 47429
+[SEND] Seq: 47429 | Janela (CWND): 4264
+[SEND] Seq: 48453 | Janela (CWND): 4264
+[SEND] Seq: 49477 | Janela (CWND): 4264
+[SEND] Seq: 50501 | Janela (CWND): 4264
+[ACK] Recebido: 48453
+[ACK] Recebido: 49477
+[ACK] Recebido: 50501
+[ACK] Recebido: 51525
+[SEND] Seq: 51525 | Janela (CWND): 5175
+[SEND] Seq: 52549 | Janela (CWND): 5175
+[ACK] Recebido: 52549
+[ACK] Recebido: 53573
+
+Total Enviado: 51200 bytes
+Retransmissoes: 6
+RTT Medio: 0.46 ms

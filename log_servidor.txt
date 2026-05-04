@@ -1,0 +1,77 @@
+[SERVER] Aguardando conexao na porta 8080
+[HANDSHAKE] Conexao estabelecida
+[DATA] Seq 2373 recebido - Total: 1024 bytes
+[DATA] Seq 3397 recebido - Total: 2048 bytes
+[DATA] Seq 4421 recebido - Total: 3072 bytes
+[DATA] Seq 5445 recebido - Total: 4096 bytes
+[DATA] Seq 6469 recebido - Total: 5120 bytes
+[DATA] Seq 7493 recebido - Total: 6144 bytes
+[DATA] Seq 8517 recebido - Total: 7168 bytes
+[LOSS] Pacote Seq 9541 ignorado
+[OUT-OF-ORDER] Esperado: 9541 | Recebido: 10565
+[OUT-OF-ORDER] Esperado: 9541 | Recebido: 11589
+[LOSS] Pacote Seq 12613 ignorado
+[LOSS] Pacote Seq 13637 ignorado
+[OUT-OF-ORDER] Esperado: 9541 | Recebido: 14661
+[OUT-OF-ORDER] Esperado: 9541 | Recebido: 15685
+[OUT-OF-ORDER] Esperado: 9541 | Recebido: 16709
+[DATA] Seq 9541 recebido - Total: 8192 bytes
+[DATA] Seq 10565 recebido - Total: 9216 bytes
+[LOSS] Pacote Seq 11589 ignorado
+[DATA] Seq 11589 recebido - Total: 10240 bytes
+[DATA] Seq 12613 recebido - Total: 11264 bytes
+[DATA] Seq 13637 recebido - Total: 12288 bytes
+[DATA] Seq 14661 recebido - Total: 13312 bytes
+[DATA] Seq 15685 recebido - Total: 14336 bytes
+[DATA] Seq 16709 recebido - Total: 15360 bytes
+[DATA] Seq 17733 recebido - Total: 16384 bytes
+[DATA] Seq 18757 recebido - Total: 17408 bytes
+[DATA] Seq 19781 recebido - Total: 18432 bytes
+[DATA] Seq 20805 recebido - Total: 19456 bytes
+[DATA] Seq 21829 recebido - Total: 20480 bytes
+[DATA] Seq 22853 recebido - Total: 21504 bytes
+[DATA] Seq 23877 recebido - Total: 22528 bytes
+[LOSS] Pacote Seq 24901 ignorado
+[OUT-OF-ORDER] Esperado: 24901 | Recebido: 25925
+[OUT-OF-ORDER] Esperado: 24901 | Recebido: 26949
+[OUT-OF-ORDER] Esperado: 24901 | Recebido: 27973
+[DATA] Seq 24901 recebido - Total: 23552 bytes
+[DATA] Seq 25925 recebido - Total: 24576 bytes
+[DATA] Seq 26949 recebido - Total: 25600 bytes
+[DATA] Seq 27973 recebido - Total: 26624 bytes
+[LOSS] Pacote Seq 28997 ignorado
+[OUT-OF-ORDER] Esperado: 28997 | Recebido: 30021
+[LOSS] Pacote Seq 28997 ignorado
+[DATA] Seq 28997 recebido - Total: 27648 bytes
+[DATA] Seq 30021 recebido - Total: 28672 bytes
+[DATA] Seq 31045 recebido - Total: 29696 bytes
+[DATA] Seq 32069 recebido - Total: 30720 bytes
+[DATA] Seq 33093 recebido - Total: 31744 bytes
+[DATA] Seq 34117 recebido - Total: 32768 bytes
+[DATA] Seq 35141 recebido - Total: 33792 bytes
+[DATA] Seq 36165 recebido - Total: 34816 bytes
+[DATA] Seq 37189 recebido - Total: 35840 bytes
+[DATA] Seq 38213 recebido - Total: 36864 bytes
+[DATA] Seq 39237 recebido - Total: 37888 bytes
+[DATA] Seq 40261 recebido - Total: 38912 bytes
+[LOSS] Pacote Seq 41285 ignorado
+[OUT-OF-ORDER] Esperado: 41285 | Recebido: 42309
+[LOSS] Pacote Seq 43333 ignorado
+[OUT-OF-ORDER] Esperado: 41285 | Recebido: 44357
+[OUT-OF-ORDER] Esperado: 41285 | Recebido: 45381
+[DATA] Seq 41285 recebido - Total: 39936 bytes
+[DATA] Seq 42309 recebido - Total: 40960 bytes
+[DATA] Seq 43333 recebido - Total: 41984 bytes
+[DATA] Seq 44357 recebido - Total: 43008 bytes
+[DATA] Seq 45381 recebido - Total: 44032 bytes
+[DATA] Seq 46405 recebido - Total: 45056 bytes
+[DATA] Seq 47429 recebido - Total: 46080 bytes
+[DATA] Seq 48453 recebido - Total: 47104 bytes
+[DATA] Seq 49477 recebido - Total: 48128 bytes
+[DATA] Seq 50501 recebido - Total: 49152 bytes
+[DATA] Seq 51525 recebido - Total: 50176 bytes
+[DATA] Seq 52549 recebido - Total: 51200 bytes
+[RECV] FIN recebido - Encerrando
+
+Total Recebido: 51200 bytes
+Perdas Simuladas: 9
