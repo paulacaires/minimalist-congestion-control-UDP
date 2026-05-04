@@ -1,12 +1,12 @@
 #ifndef PACKET_H
 #define PACKET_H
 
-#include <stdint.h>
+#include <stdint.h> // uint16_t uint32_t
 
 #define MSS 1024
 #define RTO_MS 500
 #define INITIAL_SSTHRESH 15360
-#define MAX_WINDOW_ARRAY 1024
+#define MAX_WINDOW_ARRAY 64
 
 #pragma pack(push, 1)
 typedef struct {
