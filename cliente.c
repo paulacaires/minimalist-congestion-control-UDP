@@ -109,7 +109,7 @@ int main() {
 
     // Buffer de retransmissão: guarda todos os pacotes em voo
     TransmissionEntry tx_buf[MAX_WINDOW_ARRAY];
-    memset(tx_buf, 0, sizeof(tx_buf));
+    // memset(tx_buf, 0, sizeof(tx_buf));
 
     // Controle de ACKs duplicados
     uint16_t ultimo_ack = 0;
@@ -142,6 +142,7 @@ int main() {
                 // Alinha a base da sequência de envio com o seq_number atual (cliente)
                 next_seq = ntohs(res.num_ack);
                 base_seq = next_seq;
+                ultimo_ack = next_seq;
                 // Sai do loop
                 connected = 1;
                 printf("[CLIENT] Conectado - Iniciando transferencia\n");
