@@ -7,6 +7,7 @@
 #define RTO_MS 500
 #define INITIAL_SSTHRESH 15360
 #define MAX_WINDOW_ARRAY 64
+#define RECV_BUFFER_SIZE 64
 
 #pragma pack(push, 1)
 typedef struct {

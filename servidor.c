@@ -4,6 +4,38 @@
 #include <time.h>
 #include <unistd.h>
 #include "packet.h"
+#include <string.h>
+
+// Criação do slot do buffer de recebimento
+// Para guardar pacotes recebidos fora de ordem
+typedef struct {
+    Packet pkt;
+    uint16_t seq;
+    uint16_t bytes;
+    int in_use;
+} ReceiveEntry;
+
+// Entregar em ordem os pacotes que chegaram cedo demais e fora de ordem
+uint32_t libera_pacotes_em_ordem(ReceiveEntry *rbuf, int rsize, uint16_t *expected_seq, uint32_t *total_bytes) {
+    uint32_t delivered = 0;
+    int progress = 1;
+
+    /*depois que um pacote em ordem chega e expected_seq avança, ela varre o buffer procurando se o próximo pacote esperado já está guardado lá. Se estiver, entrega, avança expected_seq de novo, e repete até não encontrar mais nada em sequência.*/
+    while (progress) {
+        progress = 0;
+        for (int i = 0; i < rsize; i++) {
+            if (rbuf[i].in_use && rbuf[i].seq == *expected_seq) {
+                printf("[REORDER-DELIVER] Seq %u entregue da fila\n", rbuf[i].seq);
+                *expected_seq += rbuf[i].bytes;
+                *total_bytes  += rbuf[i].bytes;
+                delivered     += rbuf[i].bytes;
+                rbuf[i].in_use = 0;
+                progress = 1;    
+            }
+        }
+    }
+    return delivered;
+}
 
 int main() {
     // Cria o socket UDP IPv4
@@ -22,6 +54,11 @@ int main() {
     uint16_t expected_seq = 0;
     uint32_t total_bytes = 0;
     uint32_t packets_lost = 0;
+    uint32_t out_of_order = 0;
+
+    // Buffer de reordenação
+    ReceiveEntry rbuf[RECV_BUFFER_SIZE];
+    memset(rbuf, 0, sizeof(rbuf));
 
     printf("[SERVER] Aguardando conexao na porta 8080\n");
 
@@ -77,8 +114,46 @@ int main() {
             expected_seq += b_recv; // Próximo seq_number esperado
             total_bytes += b_recv;
             printf("[DATA] Seq %u recebido - Total: %u bytes\n", cur_seq, total_bytes);
+
+            // Depois que recebe tenta ver se tem um posterior que já chegou
+            libera_pacotes_em_ordem(rbuf, RECV_BUFFER_SIZE, &expected_seq, &total_bytes);
+        } else if ((int16_t)(cur_seq - expected_seq) > 0) {
+            // Recebi o pacote, mas fora de ordem
+            int achou_buffer = 0;
+            for (int i = 0; i < RECV_BUFFER_SIZE; i++) {
+                if (rbuf[i].in_use && rbuf[i].seq == cur_seq) {
+                    achou_buffer = 1;
+                    break;
+                }
+            }
+
+            if (!achou_buffer) {
+                // Colocar nele
+                // Procurar um slot livre
+                int slot = -1;
+                for (int i = 0; i < RECV_BUFFER_SIZE; i++) {
+                    if (!rbuf[i].in_use) {
+                        slot = i;
+                        break;
+                    }
+                }
+
+                if (slot >= 0) {
+                    rbuf[slot].pkt    = pkt;
+                    rbuf[slot].seq    = cur_seq;
+                    rbuf[slot].bytes  = b_recv;
+                    rbuf[slot].in_use = 1;
+                    out_of_order++;
+                    printf("[OUT-OF-ORDER] Seq %u bufferizado (esperado: %u)\n",
+                           cur_seq, expected_seq);           
+                } else {
+                    printf("[WARN] Buffer de reordenação cheio — Seq %u descartado\n",       cur_seq);
+
+                }
+            }
         } else {
-            printf("[OUT-OF-ORDER] Esperado: %u | Recebido: %u\n", expected_seq, cur_seq);
+            // Pacote já confirmado (retransmissão antiga)
+            printf("[DUP-DATA] Seq %u já confirmado — ignorado\n", cur_seq);
         }
 
         // Envia o ACK
@@ -88,9 +163,11 @@ int main() {
         sendto(sockfd, &ack_p, sizeof(Packet), 0, (struct sockaddr *)&cliaddr, len);
     }
 
-    printf("\nTotal Recebido: %u bytes\n", total_bytes);
-    printf("Perdas Simuladas: %u\n", packets_lost);
-
+    printf("\n=== Relatório Final ===\n");
+    printf("Total Recebido    : %u bytes\n", total_bytes);
+    printf("Perdas Simuladas  : %u\n", packets_lost);
+    printf("Fora de Ordem     : %u\n", out_of_order);
+ 
     close(sockfd);
     return 0;
 }
