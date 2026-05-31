@@ -159,7 +159,7 @@ int main() {
     }
 
     // Loop principal de transferência (enquanto os bytes confirmados < 51200)
-    uint32_t total_to_send = 50 * MSS; // Envio de 50 pacotes
+    uint32_t total_to_send = 50 * MSS; // Envio de 50 pacotes - Aumentar para ver rwnd sendo ocupado
     uint32_t confirmed = 0;
     while (confirmed < total_to_send) {
         // FASE DE ENVIO: Envia rajada até o limite da cwnd
@@ -311,7 +311,7 @@ int main() {
             }
         
             // Se não é um ACK duplicado (normal)
-            else if (ack_val > ultimo_ack) {
+            else if ((int16_t)(ack_val - ultimo_ack) > 0){
                printf("[ACK] Recebido: %u\n", ack_val);
                
                // Calcula o RTT. Qual pacote o ACK confirmou?
