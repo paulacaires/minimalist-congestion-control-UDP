@@ -103,7 +103,7 @@ int main() {
                     if (pkt.flag_ack && ntohs(pkt.num_ack) == (server_isn + 1)) {
                         expected_seq = client_seq + 1;
                         printf("[HANDSHAKE] Conexao estabelecida\n");
-                        printf("[HANDSHAKE] rwnd inicial anunciada: %u bytes\n", sa.buffer_recebimento);
+                        printf("[HANDSHAKE] rwnd inicial anunciada: %u bytes\n", ntohs(sa.buffer_recebimento));
 
                         break;
                     }

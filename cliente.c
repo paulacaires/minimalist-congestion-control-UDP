@@ -215,7 +215,7 @@ int main() {
                    state == SLOW_START          ? "SLOW_START" :
                    state == CONGESTION_AVOIDANCE ? "CONG_AVOID" : "FAST_RECOV");
 
-            // log_cwnd(cwnd);
+            log_cwnd(cwnd, rwnd, menor_janela);
             next_seq  += MSS;
             in_flight += MSS;
             sent_this_round++;
