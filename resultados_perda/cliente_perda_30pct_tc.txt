@@ -1,210 +1,179 @@
-[CLIENT] Iniciando Handshake (ISN: 322)
+[CLIENT] Iniciando Handshake (ISN: 676)
 [CLIENT] Conectado - Iniciando transferencia
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 323 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 677 | CWND: 1024 | Estado: SLOW_START
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 323 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 677 | CWND: 1024 | Estado: SLOW_START
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 323 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 677 | CWND: 1024 | Estado: SLOW_START
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 323 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 677 | CWND: 1024 | Estado: SLOW_START
+[ACK] Recebido: 1701
+[SEND] Seq: 1701 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 2725 | CWND: 2048 | Estado: CONG_AVOID
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 323 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 1347
-[SEND] Seq: 1347 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 2371 | CWND: 2048 | Estado: CONG_AVOID
-[ACK] Recebido: 2371
-[SEND] Seq: 3395 | CWND: 2560 | Estado: CONG_AVOID
-[ACK] Recebido: 3395
-[SEND] Seq: 4419 | CWND: 2970 | Estado: CONG_AVOID
-[ACK] Recebido: 4419
-[SEND] Seq: 5443 | CWND: 3323 | Estado: CONG_AVOID
-[SEND] Seq: 6467 | CWND: 3323 | Estado: CONG_AVOID
-[ACK] Recebido: 5443
-[SEND] Seq: 7491 | CWND: 3638 | Estado: CONG_AVOID
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 5443 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 5443 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 5443 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 5443 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 6467
-[SEND] Seq: 6467 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 7491 | CWND: 2048 | Estado: CONG_AVOID
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 6467 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 8515
-[SEND] Seq: 7491 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 8515 | CWND: 2048 | Estado: CONG_AVOID
-[DUP-ACK #1] ACK: 8515
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 8515 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 9539
-[SEND] Seq: 9539 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 10563 | CWND: 2048 | Estado: CONG_AVOID
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 9539 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 9539 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 10563
-[SEND] Seq: 10563 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 11587 | CWND: 2048 | Estado: CONG_AVOID
-[ACK] Recebido: 11587
-[SEND] Seq: 12611 | CWND: 2560 | Estado: CONG_AVOID
-[ACK] Recebido: 13635
-[SEND] Seq: 13635 | CWND: 2970 | Estado: CONG_AVOID
-[SEND] Seq: 14659 | CWND: 2970 | Estado: CONG_AVOID
-[ACK] Recebido: 14659
-[SEND] Seq: 15683 | CWND: 3323 | Estado: CONG_AVOID
-[SEND] Seq: 16707 | CWND: 3323 | Estado: CONG_AVOID
-[ACK] Recebido: 15683
-[SEND] Seq: 17731 | CWND: 3638 | Estado: CONG_AVOID
+[SEND] Seq: 1701 | CWND: 1024 | Estado: SLOW_START
+[ACK] Recebido: 2725
+[SEND] Seq: 2725 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 3749 | CWND: 2048 | Estado: CONG_AVOID
 [FLOW-CTRL] O servidor quer outra rwnd: 65535 → 64512 bytes
-[DUP-ACK #1] ACK: 15683
+[DUP-ACK #1] ACK: 2725
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 15683 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 16707
-[SEND] Seq: 16707 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 17731 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 2725 | CWND: 1024 | Estado: SLOW_START
 [FLOW-CTRL] O servidor quer outra rwnd: 64512 → 65535 bytes
-[ACK] Recebido: 18755
-[SEND] Seq: 18755 | CWND: 2560 | Estado: CONG_AVOID
-[SEND] Seq: 19779 | CWND: 2560 | Estado: CONG_AVOID
-[ACK] Recebido: 20803
-[SEND] Seq: 20803 | CWND: 2970 | Estado: CONG_AVOID
-[SEND] Seq: 21827 | CWND: 2970 | Estado: CONG_AVOID
-[ACK] Recebido: 21827
-[SEND] Seq: 22851 | CWND: 3323 | Estado: CONG_AVOID
-[SEND] Seq: 23875 | CWND: 3323 | Estado: CONG_AVOID
-[ACK] Recebido: 22851
-[SEND] Seq: 24899 | CWND: 3638 | Estado: CONG_AVOID
-[ACK] Recebido: 25923
-[SEND] Seq: 25923 | CWND: 3926 | Estado: CONG_AVOID
-[SEND] Seq: 26947 | CWND: 3926 | Estado: CONG_AVOID
-[SEND] Seq: 27971 | CWND: 3926 | Estado: CONG_AVOID
-[ACK] Recebido: 26947
-[SEND] Seq: 28995 | CWND: 4194 | Estado: CONG_AVOID
-[SEND] Seq: 30019 | CWND: 4194 | Estado: CONG_AVOID
-[ACK] Recebido: 30019
-[SEND] Seq: 31043 | CWND: 4444 | Estado: CONG_AVOID
-[SEND] Seq: 32067 | CWND: 4444 | Estado: CONG_AVOID
-[SEND] Seq: 33091 | CWND: 4444 | Estado: CONG_AVOID
-[ACK] Recebido: 31043
-[SEND] Seq: 34115 | CWND: 4680 | Estado: CONG_AVOID
+[ACK] Recebido: 4773
+[SEND] Seq: 3749 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 4773 | CWND: 2048 | Estado: CONG_AVOID
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 4773 | CWND: 1024 | Estado: SLOW_START
+[ACK] Recebido: 5797
+[SEND] Seq: 5797 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 6821 | CWND: 2048 | Estado: CONG_AVOID
+[ACK] Recebido: 6821
+[SEND] Seq: 7845 | CWND: 2560 | Estado: CONG_AVOID
+[ACK] Recebido: 7845
+[SEND] Seq: 8869 | CWND: 2970 | Estado: CONG_AVOID
 [FLOW-CTRL] O servidor quer outra rwnd: 65535 → 64512 bytes
-[DUP-ACK #1] ACK: 31043
-[FLOW-CTRL] O servidor quer outra rwnd: 64512 → 63488 bytes
-[DUP-ACK #2] ACK: 31043
+[DUP-ACK #1] ACK: 7845
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 31043 | CWND: 1024 | Estado: SLOW_START
-[FLOW-CTRL] O servidor quer outra rwnd: 63488 → 64512 bytes
-[ACK] Recebido: 33091
-[SEND] Seq: 32067 | CWND: 2048 | Estado: SLOW_START
-[SEND] Seq: 33091 | CWND: 2048 | Estado: SLOW_START
+[SEND] Seq: 7845 | CWND: 1024 | Estado: SLOW_START
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 33091 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 33091 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 33091 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 33091 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 7845 | CWND: 1024 | Estado: SLOW_START
 [FLOW-CTRL] O servidor quer outra rwnd: 64512 → 65535 bytes
-[ACK] Recebido: 35139
-[SEND] Seq: 34115 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 35139 | CWND: 2048 | Estado: CONG_AVOID
-[DUP-ACK #1] ACK: 35139
+[ACK] Recebido: 9893
+[SEND] Seq: 8869 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 9893 | CWND: 2048 | Estado: CONG_AVOID
+[DUP-ACK #1] ACK: 9893
+[ACK] Recebido: 10917
+[SEND] Seq: 10917 | CWND: 2560 | Estado: CONG_AVOID
+[SEND] Seq: 11941 | CWND: 2560 | Estado: CONG_AVOID
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 35139 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 10917 | CWND: 1024 | Estado: SLOW_START
+[ACK] Recebido: 11941
+[SEND] Seq: 11941 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 12965 | CWND: 2048 | Estado: CONG_AVOID
+[ACK] Recebido: 12965
+[SEND] Seq: 13989 | CWND: 2560 | Estado: CONG_AVOID
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 35139 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 12965 | CWND: 1024 | Estado: SLOW_START
+[ACK] Recebido: 13989
+[SEND] Seq: 13989 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 15013 | CWND: 2048 | Estado: CONG_AVOID
+[ACK] Recebido: 15013
+[SEND] Seq: 16037 | CWND: 2560 | Estado: CONG_AVOID
+[ACK] Recebido: 17061
+[SEND] Seq: 17061 | CWND: 2970 | Estado: CONG_AVOID
+[SEND] Seq: 18085 | CWND: 2970 | Estado: CONG_AVOID
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 35139 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 36163
-[SEND] Seq: 36163 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 37187 | CWND: 2048 | Estado: CONG_AVOID
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 36163 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 36163 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 36163 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 36163 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 36163 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 38211
-[SEND] Seq: 37187 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 38211 | CWND: 2048 | Estado: CONG_AVOID
-[DUP-ACK #1] ACK: 38211
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 38211 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 39235
-[SEND] Seq: 39235 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 40259 | CWND: 2048 | Estado: CONG_AVOID
-[ACK] Recebido: 40259
-[SEND] Seq: 41283 | CWND: 2560 | Estado: CONG_AVOID
+[SEND] Seq: 17061 | CWND: 1024 | Estado: SLOW_START
+[ACK] Recebido: 18085
+[SEND] Seq: 18085 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 19109 | CWND: 2048 | Estado: CONG_AVOID
 [FLOW-CTRL] O servidor quer outra rwnd: 65535 → 64512 bytes
-[DUP-ACK #1] ACK: 40259
+[DUP-ACK #1] ACK: 18085
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 40259 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 40259 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 40259 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 40259 | CWND: 1024 | Estado: SLOW_START
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 40259 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 18085 | CWND: 1024 | Estado: SLOW_START
 [FLOW-CTRL] O servidor quer outra rwnd: 64512 → 65535 bytes
-[ACK] Recebido: 42307
-[SEND] Seq: 41283 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 42307 | CWND: 2048 | Estado: CONG_AVOID
-[DUP-ACK #1] ACK: 42307
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 42307 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 43331
-[SEND] Seq: 43331 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 44355 | CWND: 2048 | Estado: CONG_AVOID
-[ACK] Recebido: 44355
-[SEND] Seq: 45379 | CWND: 2560 | Estado: CONG_AVOID
-[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 44355 | CWND: 1024 | Estado: SLOW_START
-[ACK] Recebido: 45379
-[SEND] Seq: 45379 | CWND: 2048 | Estado: CONG_AVOID
-[SEND] Seq: 46403 | CWND: 2048 | Estado: CONG_AVOID
-[ACK] Recebido: 46403
-[SEND] Seq: 47427 | CWND: 2560 | Estado: CONG_AVOID
-[ACK] Recebido: 47427
-[SEND] Seq: 48451 | CWND: 2970 | Estado: CONG_AVOID
-[ACK] Recebido: 48451
-[SEND] Seq: 49475 | CWND: 3323 | Estado: CONG_AVOID
-[SEND] Seq: 50499 | CWND: 3323 | Estado: CONG_AVOID
+[ACK] Recebido: 20133
+[SEND] Seq: 19109 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 20133 | CWND: 2048 | Estado: CONG_AVOID
+[ACK] Recebido: 21157
+[SEND] Seq: 21157 | CWND: 2560 | Estado: CONG_AVOID
+[SEND] Seq: 22181 | CWND: 2560 | Estado: CONG_AVOID
+[ACK] Recebido: 22181
+[SEND] Seq: 23205 | CWND: 2970 | Estado: CONG_AVOID
+[ACK] Recebido: 23205
+[SEND] Seq: 24229 | CWND: 3323 | Estado: CONG_AVOID
+[SEND] Seq: 25253 | CWND: 3323 | Estado: CONG_AVOID
 [FLOW-CTRL] O servidor quer outra rwnd: 65535 → 63488 bytes
-[DUP-ACK #1] ACK: 48451
+[DUP-ACK #1] ACK: 23205
 [TIMEOUT] Perda detectada - retransmitindo a partir de seq base
-[SEND] Seq: 48451 | CWND: 1024 | Estado: SLOW_START
+[SEND] Seq: 23205 | CWND: 1024 | Estado: SLOW_START
 [FLOW-CTRL] O servidor quer outra rwnd: 63488 → 65535 bytes
-[ACK] Recebido: 51523
+[ACK] Recebido: 26277
+[SEND] Seq: 24229 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 25253 | CWND: 2048 | Estado: CONG_AVOID
+[DUP-ACK #1] ACK: 26277
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 26277 | CWND: 1024 | Estado: SLOW_START
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 26277 | CWND: 1024 | Estado: SLOW_START
+[ACK] Recebido: 27301
+[SEND] Seq: 27301 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 28325 | CWND: 2048 | Estado: CONG_AVOID
+[ACK] Recebido: 28325
+[SEND] Seq: 29349 | CWND: 2560 | Estado: CONG_AVOID
+[FLOW-CTRL] O servidor quer outra rwnd: 65535 → 64512 bytes
+[DUP-ACK #1] ACK: 28325
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 28325 | CWND: 1024 | Estado: SLOW_START
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 28325 | CWND: 1024 | Estado: SLOW_START
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 28325 | CWND: 1024 | Estado: SLOW_START
+[FLOW-CTRL] O servidor quer outra rwnd: 64512 → 65535 bytes
+[ACK] Recebido: 30373
+[SEND] Seq: 29349 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 30373 | CWND: 2048 | Estado: CONG_AVOID
+[DUP-ACK #1] ACK: 30373
+[ACK] Recebido: 31397
+[SEND] Seq: 31397 | CWND: 2560 | Estado: CONG_AVOID
+[SEND] Seq: 32421 | CWND: 2560 | Estado: CONG_AVOID
+[FLOW-CTRL] O servidor quer outra rwnd: 65535 → 64512 bytes
+[DUP-ACK #1] ACK: 31397
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 31397 | CWND: 1024 | Estado: SLOW_START
+[FLOW-CTRL] O servidor quer outra rwnd: 64512 → 65535 bytes
+[ACK] Recebido: 33445
+[SEND] Seq: 32421 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 33445 | CWND: 2048 | Estado: CONG_AVOID
+[ACK] Recebido: 34469
+[SEND] Seq: 34469 | CWND: 2560 | Estado: CONG_AVOID
+[SEND] Seq: 35493 | CWND: 2560 | Estado: CONG_AVOID
+[ACK] Recebido: 35493
+[SEND] Seq: 36517 | CWND: 2970 | Estado: CONG_AVOID
+[ACK] Recebido: 36517
+[SEND] Seq: 37541 | CWND: 3323 | Estado: CONG_AVOID
+[SEND] Seq: 38565 | CWND: 3323 | Estado: CONG_AVOID
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 36517 | CWND: 1024 | Estado: SLOW_START
+[FLOW-CTRL] O servidor quer outra rwnd: 65535 → 64512 bytes
+[ACK] Recebido: 37541
+[SEND] Seq: 37541 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 38565 | CWND: 2048 | Estado: CONG_AVOID
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 37541 | CWND: 1024 | Estado: SLOW_START
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 37541 | CWND: 1024 | Estado: SLOW_START
+[FLOW-CTRL] O servidor quer outra rwnd: 64512 → 65535 bytes
+[ACK] Recebido: 39589
+[SEND] Seq: 38565 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 39589 | CWND: 2048 | Estado: CONG_AVOID
+[DUP-ACK #1] ACK: 39589
+[ACK] Recebido: 40613
+[SEND] Seq: 40613 | CWND: 2560 | Estado: CONG_AVOID
+[SEND] Seq: 41637 | CWND: 2560 | Estado: CONG_AVOID
+[TIMEOUT] Perda detectada - retransmitindo a partir de seq base
+[SEND] Seq: 40613 | CWND: 1024 | Estado: SLOW_START
+[ACK] Recebido: 41637
+[SEND] Seq: 41637 | CWND: 2048 | Estado: CONG_AVOID
+[SEND] Seq: 42661 | CWND: 2048 | Estado: CONG_AVOID
+[ACK] Recebido: 43685
+[SEND] Seq: 43685 | CWND: 2560 | Estado: CONG_AVOID
+[SEND] Seq: 44709 | CWND: 2560 | Estado: CONG_AVOID
+[ACK] Recebido: 44709
+[SEND] Seq: 45733 | CWND: 2970 | Estado: CONG_AVOID
+[ACK] Recebido: 46757
+[SEND] Seq: 46757 | CWND: 3323 | Estado: CONG_AVOID
+[SEND] Seq: 47781 | CWND: 3323 | Estado: CONG_AVOID
+[SEND] Seq: 48805 | CWND: 3323 | Estado: CONG_AVOID
+[ACK] Recebido: 47781
+[SEND] Seq: 49829 | CWND: 3638 | Estado: CONG_AVOID
+[ACK] Recebido: 49829
+[SEND] Seq: 50853 | CWND: 3926 | Estado: CONG_AVOID
+[ACK] Recebido: 50853
+[ACK] Recebido: 51877
 
 Total Enviado: 51200 bytes
-Retransmissoes: 44
-RTT Medio: 0.23 ms
+Retransmissoes: 24
+RTT Medio: 0.21 ms

@@ -82,8 +82,8 @@ rodar_experimento() {
     # Extrai métricas do log do cliente
     RETX=$(grep -c "RETX\|TIMEOUT" "$RESULTADOS_DIR/cliente_${label}.txt" || echo "0")
     TIMEOUTS=$(grep -c "TIMEOUT" "$RESULTADOS_DIR/cliente_${label}.txt" || echo "0")
-    RTT=$(grep "RTT Medio" "$RESULTADOS_DIR/cliente_${label}.txt" | awk '{print $NF}')
-    TOTAL=$(grep "Total Enviado" "$RESULTADOS_DIR/cliente_${label}.txt" | awk '{print $NF}')
+    RTT=$(grep "RTT Medio" "$RESULTADOS_DIR/cliente_${label}.txt" | awk '{print $(NF-1)}')
+    TOTAL=$(grep "Total Enviado" "$RESULTADOS_DIR/cliente_${label}.txt" | awk '{print $(NF-1)}')
 
     echo "  Tempo total  : ${TEMPO_MS} ms"
     echo "  Total enviado: ${TOTAL}"

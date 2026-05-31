@@ -2,120 +2,129 @@
 [SERVER] Buffer de recebimento: 64 slots / 65536 bytes
 [HANDSHAKE] Conexao estabelecida
 [HANDSHAKE] rwnd inicial anunciada: 65535 bytes
-[DATA] Seq 1983 recebido - Total: 1024 bytes
-[ACK-SENT] ACK=3007 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 3007 recebido - Total: 2048 bytes
-[ACK-SENT] ACK=4031 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 4031 recebido - Total: 3072 bytes
-[ACK-SENT] ACK=5055 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 5055 recebido - Total: 4096 bytes
-[ACK-SENT] ACK=6079 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 6079 recebido - Total: 5120 bytes
-[ACK-SENT] ACK=7103 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 7103 recebido - Total: 6144 bytes
-[ACK-SENT] ACK=8127 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 8127 recebido - Total: 7168 bytes
-[ACK-SENT] ACK=9151 | rwnd=65535 bytes (64 slots livres)
-[LOSS] Pacote Seq 9151 ignorado
-[OUT-OF-ORDER] Seq 10175 bufferizado (esperado: 9151)
-[ACK-SENT] ACK=9151 | rwnd=64512 bytes (63 slots livres)
-[OUT-OF-ORDER] Seq 11199 bufferizado (esperado: 9151)
-[ACK-SENT] ACK=9151 | rwnd=63488 bytes (62 slots livres)
-[OUT-OF-ORDER] Seq 12223 bufferizado (esperado: 9151)
-[ACK-SENT] ACK=9151 | rwnd=62464 bytes (61 slots livres)
-[DATA] Seq 9151 recebido - Total: 8192 bytes
-[REORDER-DELIVER] Seq 10175 entregue da fila
-[REORDER-DELIVER] Seq 11199 entregue da fila
-[REORDER-DELIVER] Seq 12223 entregue da fila
-[ACK-SENT] ACK=13247 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 13247 recebido - Total: 12288 bytes
-[ACK-SENT] ACK=14271 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 14271 recebido - Total: 13312 bytes
-[ACK-SENT] ACK=15295 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 15295 recebido - Total: 14336 bytes
-[ACK-SENT] ACK=16319 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 16319 recebido - Total: 15360 bytes
-[ACK-SENT] ACK=17343 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 17343 recebido - Total: 16384 bytes
-[ACK-SENT] ACK=18367 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 18367 recebido - Total: 17408 bytes
-[ACK-SENT] ACK=19391 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 19391 recebido - Total: 18432 bytes
-[ACK-SENT] ACK=20415 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 20415 recebido - Total: 19456 bytes
-[ACK-SENT] ACK=21439 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 21439 recebido - Total: 20480 bytes
-[ACK-SENT] ACK=22463 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 22463 recebido - Total: 21504 bytes
-[ACK-SENT] ACK=23487 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 23487 recebido - Total: 22528 bytes
-[ACK-SENT] ACK=24511 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 24511 recebido - Total: 23552 bytes
-[ACK-SENT] ACK=25535 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 25535 recebido - Total: 24576 bytes
-[ACK-SENT] ACK=26559 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 26559 recebido - Total: 25600 bytes
-[ACK-SENT] ACK=27583 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 27583 recebido - Total: 26624 bytes
-[ACK-SENT] ACK=28607 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 28607 recebido - Total: 27648 bytes
-[ACK-SENT] ACK=29631 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 29631 recebido - Total: 28672 bytes
-[ACK-SENT] ACK=30655 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 30655 recebido - Total: 29696 bytes
-[ACK-SENT] ACK=31679 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 31679 recebido - Total: 30720 bytes
-[ACK-SENT] ACK=32703 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 32703 recebido - Total: 31744 bytes
-[ACK-SENT] ACK=33727 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 33727 recebido - Total: 32768 bytes
-[ACK-SENT] ACK=34751 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 34751 recebido - Total: 33792 bytes
-[ACK-SENT] ACK=35775 | rwnd=65535 bytes (64 slots livres)
-[LOSS] Pacote Seq 35775 ignorado
-[OUT-OF-ORDER] Seq 36799 bufferizado (esperado: 35775)
-[ACK-SENT] ACK=35775 | rwnd=64512 bytes (63 slots livres)
-[OUT-OF-ORDER] Seq 37823 bufferizado (esperado: 35775)
-[ACK-SENT] ACK=35775 | rwnd=63488 bytes (62 slots livres)
-[OUT-OF-ORDER] Seq 38847 bufferizado (esperado: 35775)
-[ACK-SENT] ACK=35775 | rwnd=62464 bytes (61 slots livres)
-[OUT-OF-ORDER] Seq 39871 bufferizado (esperado: 35775)
-[ACK-SENT] ACK=35775 | rwnd=61440 bytes (60 slots livres)
-[OUT-OF-ORDER] Seq 40895 bufferizado (esperado: 35775)
-[ACK-SENT] ACK=35775 | rwnd=60416 bytes (59 slots livres)
-[OUT-OF-ORDER] Seq 41919 bufferizado (esperado: 35775)
-[ACK-SENT] ACK=35775 | rwnd=59392 bytes (58 slots livres)
-[DATA] Seq 35775 recebido - Total: 34816 bytes
-[REORDER-DELIVER] Seq 36799 entregue da fila
-[REORDER-DELIVER] Seq 37823 entregue da fila
-[REORDER-DELIVER] Seq 38847 entregue da fila
-[REORDER-DELIVER] Seq 39871 entregue da fila
-[REORDER-DELIVER] Seq 40895 entregue da fila
-[REORDER-DELIVER] Seq 41919 entregue da fila
-[ACK-SENT] ACK=42943 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 42943 recebido - Total: 41984 bytes
-[ACK-SENT] ACK=43967 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 43967 recebido - Total: 43008 bytes
-[ACK-SENT] ACK=44991 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 44991 recebido - Total: 44032 bytes
-[ACK-SENT] ACK=46015 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 46015 recebido - Total: 45056 bytes
-[ACK-SENT] ACK=47039 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 47039 recebido - Total: 46080 bytes
-[ACK-SENT] ACK=48063 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 48063 recebido - Total: 47104 bytes
-[ACK-SENT] ACK=49087 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 49087 recebido - Total: 48128 bytes
-[ACK-SENT] ACK=50111 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 50111 recebido - Total: 49152 bytes
-[ACK-SENT] ACK=51135 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 51135 recebido - Total: 50176 bytes
-[ACK-SENT] ACK=52159 | rwnd=65535 bytes (64 slots livres)
-[DATA] Seq 52159 recebido - Total: 51200 bytes
-[ACK-SENT] ACK=53183 | rwnd=65535 bytes (64 slots livres)
+[LOSS] Pacote Seq 4244 ignorado
+[DATA] Seq 4244 recebido - Total: 1024 bytes
+[ACK-SENT] ACK=5268 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 5268 recebido - Total: 2048 bytes
+[ACK-SENT] ACK=6292 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 6292 recebido - Total: 3072 bytes
+[ACK-SENT] ACK=7316 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 7316 recebido - Total: 4096 bytes
+[ACK-SENT] ACK=8340 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 8340 recebido - Total: 5120 bytes
+[ACK-SENT] ACK=9364 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 9364 recebido - Total: 6144 bytes
+[ACK-SENT] ACK=10388 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 10388 recebido - Total: 7168 bytes
+[ACK-SENT] ACK=11412 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 11412 recebido - Total: 8192 bytes
+[ACK-SENT] ACK=12436 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 12436 recebido - Total: 9216 bytes
+[ACK-SENT] ACK=13460 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 13460 recebido - Total: 10240 bytes
+[ACK-SENT] ACK=14484 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 14484 recebido - Total: 11264 bytes
+[ACK-SENT] ACK=15508 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 15508 recebido - Total: 12288 bytes
+[ACK-SENT] ACK=16532 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 16532 recebido - Total: 13312 bytes
+[ACK-SENT] ACK=17556 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 17556 recebido - Total: 14336 bytes
+[ACK-SENT] ACK=18580 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 18580 recebido - Total: 15360 bytes
+[ACK-SENT] ACK=19604 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 19604 recebido - Total: 16384 bytes
+[ACK-SENT] ACK=20628 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 20628 recebido - Total: 17408 bytes
+[ACK-SENT] ACK=21652 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 21652 recebido - Total: 18432 bytes
+[ACK-SENT] ACK=22676 | rwnd=65535 bytes (64 slots livres)
+[LOSS] Pacote Seq 22676 ignorado
+[OUT-OF-ORDER] Seq 23700 bufferizado (esperado: 22676)
+[ACK-SENT] ACK=22676 | rwnd=64512 bytes (63 slots livres)
+[LOSS] Pacote Seq 24724 ignorado
+[OUT-OF-ORDER] Seq 25748 bufferizado (esperado: 22676)
+[ACK-SENT] ACK=22676 | rwnd=63488 bytes (62 slots livres)
+[OUT-OF-ORDER] Seq 26772 bufferizado (esperado: 22676)
+[ACK-SENT] ACK=22676 | rwnd=62464 bytes (61 slots livres)
+[OUT-OF-ORDER] Seq 27796 bufferizado (esperado: 22676)
+[ACK-SENT] ACK=22676 | rwnd=61440 bytes (60 slots livres)
+[DATA] Seq 22676 recebido - Total: 19456 bytes
+[REORDER-DELIVER] Seq 23700 entregue da fila
+[ACK-SENT] ACK=24724 | rwnd=62464 bytes (61 slots livres)
+[OUT-OF-ORDER] Seq 28820 bufferizado (esperado: 24724)
+[ACK-SENT] ACK=24724 | rwnd=61440 bytes (60 slots livres)
+[DATA] Seq 24724 recebido - Total: 21504 bytes
+[REORDER-DELIVER] Seq 25748 entregue da fila
+[REORDER-DELIVER] Seq 26772 entregue da fila
+[REORDER-DELIVER] Seq 27796 entregue da fila
+[REORDER-DELIVER] Seq 28820 entregue da fila
+[ACK-SENT] ACK=29844 | rwnd=65535 bytes (64 slots livres)
+[DUP-DATA] Seq 25748 já confirmado — ignorado
+[ACK-SENT] ACK=29844 | rwnd=65535 bytes (64 slots livres)
+[DUP-DATA] Seq 26772 já confirmado — ignorado
+[ACK-SENT] ACK=29844 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 29844 recebido - Total: 26624 bytes
+[ACK-SENT] ACK=30868 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 30868 recebido - Total: 27648 bytes
+[ACK-SENT] ACK=31892 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 31892 recebido - Total: 28672 bytes
+[ACK-SENT] ACK=32916 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 32916 recebido - Total: 29696 bytes
+[ACK-SENT] ACK=33940 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 33940 recebido - Total: 30720 bytes
+[ACK-SENT] ACK=34964 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 34964 recebido - Total: 31744 bytes
+[ACK-SENT] ACK=35988 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 35988 recebido - Total: 32768 bytes
+[ACK-SENT] ACK=37012 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 37012 recebido - Total: 33792 bytes
+[ACK-SENT] ACK=38036 | rwnd=65535 bytes (64 slots livres)
+[LOSS] Pacote Seq 38036 ignorado
+[OUT-OF-ORDER] Seq 39060 bufferizado (esperado: 38036)
+[ACK-SENT] ACK=38036 | rwnd=64512 bytes (63 slots livres)
+[OUT-OF-ORDER] Seq 40084 bufferizado (esperado: 38036)
+[ACK-SENT] ACK=38036 | rwnd=63488 bytes (62 slots livres)
+[OUT-OF-ORDER] Seq 41108 bufferizado (esperado: 38036)
+[ACK-SENT] ACK=38036 | rwnd=62464 bytes (61 slots livres)
+[DATA] Seq 38036 recebido - Total: 34816 bytes
+[REORDER-DELIVER] Seq 39060 entregue da fila
+[REORDER-DELIVER] Seq 40084 entregue da fila
+[REORDER-DELIVER] Seq 41108 entregue da fila
+[ACK-SENT] ACK=42132 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 42132 recebido - Total: 38912 bytes
+[ACK-SENT] ACK=43156 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 43156 recebido - Total: 39936 bytes
+[ACK-SENT] ACK=44180 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 44180 recebido - Total: 40960 bytes
+[ACK-SENT] ACK=45204 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 45204 recebido - Total: 41984 bytes
+[ACK-SENT] ACK=46228 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 46228 recebido - Total: 43008 bytes
+[ACK-SENT] ACK=47252 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 47252 recebido - Total: 44032 bytes
+[ACK-SENT] ACK=48276 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 48276 recebido - Total: 45056 bytes
+[ACK-SENT] ACK=49300 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 49300 recebido - Total: 46080 bytes
+[ACK-SENT] ACK=50324 | rwnd=65535 bytes (64 slots livres)
+[DATA] Seq 50324 recebido - Total: 47104 bytes
+[ACK-SENT] ACK=51348 | rwnd=65535 bytes (64 slots livres)
+[LOSS] Pacote Seq 51348 ignorado
+[OUT-OF-ORDER] Seq 52372 bufferizado (esperado: 51348)
+[ACK-SENT] ACK=51348 | rwnd=64512 bytes (63 slots livres)
+[OUT-OF-ORDER] Seq 53396 bufferizado (esperado: 51348)
+[ACK-SENT] ACK=51348 | rwnd=63488 bytes (62 slots livres)
+[OUT-OF-ORDER] Seq 54420 bufferizado (esperado: 51348)
+[ACK-SENT] ACK=51348 | rwnd=62464 bytes (61 slots livres)
+[DATA] Seq 51348 recebido - Total: 48128 bytes
+[REORDER-DELIVER] Seq 52372 entregue da fila
+[REORDER-DELIVER] Seq 53396 entregue da fila
+[REORDER-DELIVER] Seq 54420 entregue da fila
+[ACK-SENT] ACK=55444 | rwnd=65535 bytes (64 slots livres)
 [RECV] FIN recebido - Encerrando
 
 === Relatório Final ===
 Total Recebido    : 51200 bytes
-Perdas Simuladas  : 2
-Fora de Ordem     : 9
+Perdas Simuladas  : 5
+Fora de Ordem     : 11

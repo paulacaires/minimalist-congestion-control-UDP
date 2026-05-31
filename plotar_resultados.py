@@ -128,6 +128,7 @@ if not os.path.exists(resumo_path):
     sys.exit(0)
 
 res = pd.read_csv(resumo_path)
+
 # Calcula throughput em KB/s
 res["throughput_kbs"] = (res["bytes_enviados"] / (res["tempo_ms"] / 1000)) / 1024
 

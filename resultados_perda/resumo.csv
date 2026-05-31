@@ -1,5 +1,5 @@
 taxa_perda_pct,tempo_ms,bytes_enviados,retransmissoes,timeouts,rtt_medio_ms
-0,22,bytes,3,1,ms
-5,3528,bytes,10,8,ms
-15,7528,bytes,17,16,ms
-30,21519,bytes,44,44,ms
+0,1533,51200,7,4,0.40
+5,5030,51200,11,11,0.17
+15,15529,51200,33,32,0.26
+30,13527,51200,24,24,0.21
