@@ -37,6 +37,22 @@ uint32_t libera_pacotes_em_ordem(ReceiveEntry *rbuf, int rsize, uint16_t *expect
     return delivered;
 }
 
+static int slots_ocupados(ReceiveEntry *rbuf, int rsize) {
+    int count = 0;
+    for (int i = 0; i < rsize; i++)
+        if (rbuf[i].in_use) count++;
+    return count;
+}
+
+// Calcula a janela de recibimento disponível
+static uint16_t calc_rwnd(ReceiveEntry *rbuf, int rsize) {
+    int livres = rsize - slots_ocupados(rbuf, rsize);
+    uint32_t rwnd_bytes = (uint32_t)livres * MSS;
+    // Para evitar overflow
+    if (rwnd_bytes > 65535) rwnd_bytes = 65535;
+    return (uint16_t)rwnd_bytes;
+}
+
 int main() {
     // Cria o socket UDP IPv4
     int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
@@ -61,6 +77,7 @@ int main() {
     memset(rbuf, 0, sizeof(rbuf));
 
     printf("[SERVER] Aguardando conexao na porta 8080\n");
+    printf("[SERVER] Buffer de recebimento: %d slots / %d bytes\n", RECV_BUFFER_SIZE, RECV_WINDOW_MAX);
 
     Packet pkt;
     // Three-Way Handshake
@@ -76,6 +93,8 @@ int main() {
                 sa.num_seq = htons(server_isn);
                 sa.num_ack = htons(client_seq + 1);
                 sa.flag_syn = 1; sa.flag_ack = 1;
+                // Falar qual é a janela que quer
+                sa.buffer_recebimento = htons(calc_rwnd(rbuf, RECV_BUFFER_SIZE));
 
                 sendto(sockfd, &sa, sizeof(Packet), 0, (struct sockaddr *)&cliaddr, len);
 
@@ -84,6 +103,8 @@ int main() {
                     if (pkt.flag_ack && ntohs(pkt.num_ack) == (server_isn + 1)) {
                         expected_seq = client_seq + 1;
                         printf("[HANDSHAKE] Conexao estabelecida\n");
+                        printf("[HANDSHAKE] rwnd inicial anunciada: %u bytes\n", sa.buffer_recebimento);
+
                         break;
                     }
                 }
@@ -160,7 +181,15 @@ int main() {
         Packet ack_p = {0};
         ack_p.num_ack = htons(expected_seq);
         ack_p.flag_ack = 1;
+        // Calcula a nova janela
+        uint16_t rwnd = calc_rwnd(rbuf, RECV_BUFFER_SIZE);
+        ack_p.buffer_recebimento = htons(rwnd);
         sendto(sockfd, &ack_p, sizeof(Packet), 0, (struct sockaddr *)&cliaddr, len);
+
+        printf("[ACK-SENT] ACK=%u | rwnd=%u bytes (%d slots livres)\n",
+        expected_seq, rwnd,
+        (RECV_BUFFER_SIZE - slots_ocupados(rbuf, RECV_BUFFER_SIZE)));
+
     }
 
     printf("\n=== Relatório Final ===\n");

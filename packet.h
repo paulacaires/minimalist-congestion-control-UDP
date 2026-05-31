@@ -9,6 +9,10 @@
 #define MAX_WINDOW_ARRAY 64
 #define RECV_BUFFER_SIZE 64
 
+// Tamanho total do buffer de recevimento do servidor
+/* Quantos bytes o servidor consegue armazenar no buffer de recepção */
+#define RECV_WINDOW_MAX (RECV_BUFFER_SIZE * MSS)
+
 #pragma pack(push, 1)
 typedef struct {
     uint16_t num_seq;

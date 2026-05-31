@@ -1,9 +1,6 @@
 # Como eu executo
 
-- Abro o WSL
-
-- 
-
+Abrir o WSL
 
 # Explicando as decisões
 

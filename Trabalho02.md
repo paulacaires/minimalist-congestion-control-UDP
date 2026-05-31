@@ -1,3 +1,9 @@
+Como ativar o Venv:
+
+.venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
+
+
 # Socket no modo não bloqueante
 
 É necessário para implementar a lógica de timeout.

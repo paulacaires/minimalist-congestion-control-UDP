@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <fcntl.h>   // necessário para fcntl() e O_NONBLOCK
 #include "packet.h"
+#include <string.h>
 
 // Definição dos estados
 typedef enum { SLOW_START, CONGESTION_AVOIDANCE, FAST_RECOVERY } State;
@@ -59,15 +60,16 @@ int recv_com_timeout(int sockfd, Packet *buf, double deadline) {
 // Código pronto para o log
 static FILE *log_fp = NULL;
 static double log_t0 = 0;
-static void log_cwnd(float cwnd) {
+static void log_cwnd(float cwnd, uint32_t rwnd, uint32_t menor_janela) {
     if (!log_fp) return;
-    fprintf(log_fp, "%.1f,%.0f\n", get_now() - log_t0, cwnd);
+        fprintf(log_fp, "%.1f,%.0f,%u,%u\n",
+            get_now() - log_t0, cwnd, rwnd, menor_janela);
 }
 
 int main() {
-    // [Log CWND]
+    // [Log CWND + rwnd + janela efetiva, de fato]
     log_fp = fopen("cwnd_log.csv", "w");
-    if (log_fp) fprintf(log_fp, "tempo_ms,cwnd\n");
+    if (log_fp) fprintf(log_fp, "tempo_ms,cwnd,rwnd,janela_efetiva\n");
     log_t0 = get_now();
     
 
@@ -103,6 +105,8 @@ int main() {
     uint16_t base_seq = 0, next_seq = 0;
     State state = SLOW_START;
 
+    uint32_t rwnd = RECV_WINDOW_MAX;
+
     // Variáveis para contagem de retransmissões e RTT
     uint32_t retransmissions = 0, rtt_count = 0;
     double total_rtt = 0;
@@ -132,6 +136,10 @@ int main() {
             if (ntohs(res.num_ack) == client_isn + 1) {
                 // Guarda o seq number do server
                 uint16_t serv_seq = ntohs(res.num_seq);
+
+                // Descobre qual é a rwnd que o servidor quer
+                rwnd = ntohs(res.buffer_recebimento);
+
                 Packet ack = {0};
                 // Define o ack_number (num_seq do servidor + 1) e ativa a flag ACK
                 ack.num_ack = htons(serv_seq + 1); ack.flag_ack = 1;
@@ -159,9 +167,24 @@ int main() {
         // Conta bytes em voo (slots ocupados no tx_buf)
         for (int i = 0; i < MAX_WINDOW_ARRAY; i++)
             if (tx_buf[i].in_use) in_flight += MSS;
+
+        /*
+        Tem que caber em ambas as janelas, então a janela_efetiva é a menor das duas.
+        */
+        uint32_t menor_janela = ((uint32_t)cwnd < rwnd) ? (uint32_t)cwnd : rwnd;
+        
+        // A rede permite mais tráfego, mas o servidor não.
+        if (rwnd < (uint32_t)cwnd && rwnd > 0)
+            printf("[FLOW-CTRL] rwnd (%u) limita cwnd (%.0f) — menor_janela=%u\n", rwnd, cwnd, menor_janela);
+
+        if (rwnd == 0) {
+            printf("[ZERO-WND] Servidor sem espaço — aguardando...\n");
+            usleep(RTO_MS * 1000);
+            continue;
+        }
              
         int sent_this_round = 0;
-        while (in_flight + MSS <= (uint32_t)cwnd && (confirmed + in_flight) < total_to_send) {
+        while (in_flight + MSS <= menor_janela && (confirmed + in_flight) < total_to_send) {
             // Procurar um slot livre no buffer de retransmissão
             int slot_livre = -1;
             for (int i = 0; i < MAX_WINDOW_ARRAY; i++) {
@@ -192,7 +215,7 @@ int main() {
                    state == SLOW_START          ? "SLOW_START" :
                    state == CONGESTION_AVOIDANCE ? "CONG_AVOID" : "FAST_RECOV");
 
-            log_cwnd(cwnd);
+            // log_cwnd(cwnd);
             next_seq  += MSS;
             in_flight += MSS;
             sent_this_round++;
@@ -200,7 +223,6 @@ int main() {
 
         if (sent_this_round == 0 && in_flight == 0) {
             // Não tem mais nada para enviar
-            printf("Nadaaa\n");
             break;
         }
 
@@ -227,7 +249,7 @@ int main() {
             state = SLOW_START;
             dup_ack_count = 0;
 
-            log_cwnd(cwnd);
+            log_cwnd(cwnd, rwnd, (uint32_t)cwnd < rwnd ? (uint32_t)cwnd : rwnd);
 
             // Retransmite todos os pacotes em voo
             // Volta para o ponto que não foi confirmado
@@ -240,6 +262,13 @@ int main() {
         // ACK recebido
         else if (n > 0) {
             uint16_t ack_val = ntohs(res.num_ack);
+
+            // Atualiza a rwnd com base nos pacotes retornados pelo servidor
+            uint16_t new_rwnd = ntohs(res.buffer_recebimento);
+            if (new_rwnd != rwnd) {
+                printf("[FLOW-CTRL] O servidor quer outra rwnd: %u → %u bytes\n", rwnd, new_rwnd);
+                rwnd = new_rwnd;
+            }
 
             // Verificar se é um ACK duplicado
             if (ack_val == ultimo_ack) {
@@ -256,7 +285,8 @@ int main() {
                     cwnd  = (float)ssthresh + 3 * MSS;
                     state = FAST_RECOVERY;
 
-                    log_cwnd(cwnd);
+                    uint32_t log_janela = (uint32_t)cwnd < rwnd ? (uint32_t)cwnd : rwnd;
+                    log_cwnd(cwnd, rwnd, log_janela);
 
                     // Retransmite o pacote que gerou o ACK duplicado  
                     for (int i = 0; i < MAX_WINDOW_ARRAY; i++) {
@@ -275,7 +305,8 @@ int main() {
                         estão saindo da rede, então pode enviar mais pacotes.
                     */
                     cwnd += MSS;
-                    log_cwnd(cwnd);
+                    uint32_t log_janela = (uint32_t)cwnd < rwnd ? (uint32_t)cwnd : rwnd;
+                    log_cwnd(cwnd, rwnd, log_janela);
                 }
             }
         
@@ -319,7 +350,8 @@ int main() {
                     printf("[FAST-RECOVERY] Saindo — CWND deflacionada para %.0f\n", cwnd);
                 }
 
-                log_cwnd(cwnd);
+                uint32_t log_janela = (uint32_t)cwnd < rwnd ? (uint32_t)cwnd : rwnd;
+                log_cwnd(cwnd, rwnd, log_janela);
                 ultimo_ack = ack_val;
                 dup_ack_count = 0;
             }
